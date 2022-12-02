@@ -81,3 +81,4 @@ outcomes2 = {"A X" : (3),  #loss to Rock      #small enough to be enumerated
             "C Y":(6)}
 score = 0
 for r in open('in.txt').readlines(): score+= int(outcomes2[r.rstrip()])
+print(score)
