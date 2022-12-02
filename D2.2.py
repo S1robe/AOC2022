@@ -56,3 +56,28 @@ for n in open('in.txt').readlines():
             score += C
             score += L
 print(score)
+
+
+#------------ Alt Method (better imo)
+# Not used but thought of after
+outcomes1 = {"A X" : (4), #Draw # smaller enough # of outcomes to be enumerated
+            "B Y" : (6), 
+            "C Z" : (6), 
+            "A Y" : (8),# Wins
+            "B Z" :(9),
+            "C X" :(7),
+            "A Z":(3), # loss
+            "B X":(1),
+            "C Y":(2)}
+
+outcomes2 = {"A X" : (3),  #loss to Rock      #small enough to be enumerated
+            "B Y" : (5), #draw to paper
+            "C Z" : (7), # win w/ scissors
+            "A Y" : (4),
+            "B Z" :(9),
+            "C X" :(2),
+            "A Z":(8),
+            "B X":(1),
+            "C Y":(6)}
+score = 0
+for r in open('in.txt').readlines(): score+= int(outcomes2[r.rstrip()])
